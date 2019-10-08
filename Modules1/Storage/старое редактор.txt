@@ -1,0 +1,242 @@
+
+
+
+
+Номер в системе
+<input class="kk"readonly id="id" name="id" value="<?echo $res['id'];?>">
+Склад
+<?echo $sclad;?>
+Артикул
+<input class="kk" id="art" name="art" value="<?echo $res['art'];?>">
+Код на складе
+<input class="kk"id="kod_s" name="kod_s" value="<?echo $res['kod_s'];?>">
+Активно
+
+			<select name='active' style="width:100%;">
+				<option name='active' value='yes' <?if($res['active']=="yes") echo "selected"; ?>>Да</option>
+				<option name='active' value='no' <?if($res['active']!="yes") echo "selected"; ?> >Нет</option>
+			</select>
+Штрих-код
+<input class="kk"id="shtrih" name="shtrih" value="<?echo $res['shtrih'];?>">
+Наименование
+<input class="kk"id="name" name="name" onclick="document.getElementById('name_p').value=document.getElementById('name').value;" value="<?echo $res['name'];?>">
+Наименование (печать)
+<input class="kk"id="name_p" name="name_p" value="<?echo $res['name_print'];?>">
+Производитель
+<?echo $firma;?>
+Контрагент
+<input class="kk"id="kagent" name="kagent" value="<?echo $res['kagent'];?>">
+Сертификат
+<?echo $sertifikat;?>
+Группа 1
+<?echo $group;?>
+Группа 2
+<?echo $group2;?>
+Ед. изм.
+<input class="kk" id="unit" name="unit" value="<?echo $res['unit'];?>">
+Фактическое
+<input class="kk" readonly id="fact" name="fact" value="<?echo (int)$res['dost'];?>">
+Доступное
+<input class="kk"id="dost" name="dost" value="<?echo $res['dost'];?>">
+Куплено
+<?echo $res['kup'];?>
+Ширина (см) (x)
+<input class="kk"id="width" name="width" value="<?echo $res['width'];?>">
+Длина (см) (y)
+<input class="kk"id="height" name="height" value="<?echo $res['height'];?>">
+Высота (см) (z)
+<input class="kk"id="length" name="length" value="<?echo $res['length'];?>">
+Вес (гр.)
+<input class="kk"id="massa" name="massa" value="<?echo $res['massa'];?>">
+Размеры
+		</td>
+		<td colspan="10" style="text-align:left;">
+		<label><input type="checkbox" <?if($res['razm1']=='xs') echo "checked";?> name="razm1"/> XS</label>
+
+		<label><input type="checkbox" <?if($res['razm2']=='s') echo "checked";?>  name="razm2"/> S</label>
+
+		<label><input type="checkbox" <?if($res['razm3']=='m') echo "checked";?>  name="razm3"/> M</label>
+
+		<label><input type="checkbox" <?if($res['razm4']=='l') echo "checked";?>  name="razm4"/> L</label>
+
+		<label><input type="checkbox" <?if($res['razm5']=='xl') echo "checked";?>  name="razm5"/> XL</label>
+
+		<label><input type="checkbox" <?if($res['razm6']=='xxl') echo "checked";?>  name="razm6"/> XXL</label>
+
+		<label><input type="text" placeholder="Свой размер" value="<?echo $res['razm7'];?>"/></label>
+
+		</td>
+	</tr>
+		<tr>
+Цвета
+		</td>
+		<td colspan="10" style="text-align:left;">
+		
+		<label>
+			<select name='color1'>
+				<option value=""></option>
+				<option value="write" <?if($res['color1']=="write") echo "selected";?>>Белый</option>
+				<option value="black" <?if($res['color1']=="black") echo "selected";?>>Черный</option>
+				<option value="red" <?if($res['color1']=="red") echo "selected";?>>Красный</option>
+				<option value="pink" <?if($res['color1']=="pink") echo "selected";?>>Розовый</option>
+				<option value="purple" <?if($res['color1']=="purple") echo "selected";?>>Фиолетовый</option>
+				<option value="blue" <?if($res['color1']=="blue") echo "selected";?>>Синий</option>
+				<option value="blue-w" <?if($res['color1']=="blue-w") echo "selected";?>>Голубой</option>
+				<option value="green" <?if($res['color1']=="green") echo "selected";?>>Зеленый</option>
+				<option value="yellow" <?if($res['color1']=="yellow") echo "selected";?>>Желтый</option>
+				<option value="orange" <?if($res['color1']=="orange") echo "selected";?>>Оранжевый</option>
+				<option value="brown" <?if($res['color1']=="brown") echo "selected";?>>Коричневый</option>
+				<option value="gray" <?if($res['color1']=="gray") echo "selected";?>>Серый</option>
+			</select>
+		</label>
+		<label>
+			<select name='color2'>
+				<option value=""></option>
+				<option value="write" <?if($res['color2']=="write") echo "selected";?>>Белый</option>
+				<option value="black" <?if($res['color2']=="black") echo "selected";?>>Черный</option>
+				<option value="red" <?if($res['color2']=="red") echo "selected";?>>Красный</option>
+				<option value="pink" <?if($res['color2']=="pink") echo "selected";?>>Розовый</option>
+				<option value="purple" <?if($res['color2']=="purple") echo "selected";?>>Фиолетовый</option>
+				<option value="blue" <?if($res['color2']=="blue") echo "selected";?>>Синий</option>
+				<option value="blue-w" <?if($res['color2']=="blue-w") echo "selected";?>>Голубой</option>
+				<option value="green" <?if($res['color2']=="green") echo "selected";?>>Зеленый</option>
+				<option value="yellow" <?if($res['color2']=="yellow") echo "selected";?>>Желтый</option>
+				<option value="orange" <?if($res['color2']=="orange") echo "selected";?>>Оранжевый</option>
+				<option value="brown" <?if($res['color2']=="brown") echo "selected";?>>Коричневый</option>
+				<option value="gray" <?if($res['color2']=="gray") echo "selected";?>>Серый</option>
+			</select>
+		</label>
+		<label>
+			<select name='color3'>
+				<option value=""></option>
+				<option value="write" <?if($res['color3']=="write") echo "selected";?>>Белый</option>
+				<option value="black" <?if($res['color3']=="black") echo "selected";?>>Черный</option>
+				<option value="red" <?if($res['color3']=="red") echo "selected";?>>Красный</option>
+				<option value="pink" <?if($res['color3']=="pink") echo "selected";?>>Розовый</option>
+				<option value="purple" <?if($res['color3']=="purple") echo "selected";?>>Фиолетовый</option>
+				<option value="blue" <?if($res['color3']=="blue") echo "selected";?>>Синий</option>
+				<option value="blue-w" <?if($res['color3']=="blue-w") echo "selected";?>>Голубой</option>
+				<option value="green" <?if($res['color3']=="green") echo "selected";?>>Зеленый</option>
+				<option value="yellow" <?if($res['color3']=="yellow") echo "selected";?>>Желтый</option>
+				<option value="orange" <?if($res['color3']=="orange") echo "selected";?>>Оранжевый</option>
+				<option value="brown" <?if($res['color3']=="brown") echo "selected";?>>Коричневый</option>
+				<option value="gray" <?if($res['color3']=="gray") echo "selected";?>>Серый</option>
+			</select>
+		</label>
+		<label>
+			<select name='color4'>
+				<option value=""></option>
+				<option value="write" <?if($res['color4']=="write") echo "selected";?>>Белый</option>
+				<option value="black" <?if($res['color4']=="black") echo "selected";?>>Черный</option>
+				<option value="red" <?if($res['color4']=="red") echo "selected";?>>Красный</option>
+				<option value="pink" <?if($res['color4']=="pink") echo "selected";?>>Розовый</option>
+				<option value="purple" <?if($res['color4']=="purple") echo "selected";?>>Фиолетовый</option>
+				<option value="blue" <?if($res['color4']=="blue") echo "selected";?>>Синий</option>
+				<option value="blue-w" <?if($res['color4']=="blue-w") echo "selected";?>>Голубой</option>
+				<option value="green" <?if($res['color4']=="green") echo "selected";?>>Зеленый</option>
+				<option value="yellow" <?if($res['color4']=="yellow") echo "selected";?>>Желтый</option>
+				<option value="orange" <?if($res['color4']=="orange") echo "selected";?>>Оранжевый</option>
+				<option value="brown" <?if($res['color4']=="brown") echo "selected";?>>Коричневый</option>
+				<option value="gray" <?if($res['color4']=="gray") echo "selected";?>>Серый</option>
+			</select>
+		</label>
+		<label>
+			<select name='color5'>
+				<option value=""></option>
+				<option value="write" <?if($res['color5']=="write") echo "selected";?>>Белый</option>
+				<option value="black" <?if($res['color5']=="black") echo "selected";?>>Черный</option>
+				<option value="red" <?if($res['color5']=="red") echo "selected";?>>Красный</option>
+				<option value="pink" <?if($res['color5']=="pink") echo "selected";?>>Розовый</option>
+				<option value="purple" <?if($res['color5']=="purple") echo "selected";?>>Фиолетовый</option>
+				<option value="blue" <?if($res['color5']=="blue") echo "selected";?>>Синий</option>
+				<option value="blue-w" <?if($res['color5']=="blue-w") echo "selected";?>>Голубой</option>
+				<option value="green" <?if($res['color5']=="green") echo "selected";?>>Зеленый</option>
+				<option value="yellow" <?if($res['color5']=="yellow") echo "selected";?>>Желтый</option>
+				<option value="orange" <?if($res['color5']=="orange") echo "selected";?>>Оранжевый</option>
+				<option value="brown" <?if($res['color5']=="brown") echo "selected";?>>Коричневый</option>
+				<option value="gray" <?if($res['color5']=="gray") echo "selected";?>>Серый</option>
+			</select>
+		</label>
+		<label>
+			<select name='color6'>
+				<option value=""></option>
+				<option value="write" <?if($res['color6']=="write") echo "selected";?>>Белый</option>
+				<option value="black" <?if($res['color6']=="black") echo "selected";?>>Черный</option>
+				<option value="red" <?if($res['color6']=="red") echo "selected";?>>Красный</option>
+				<option value="pink" <?if($res['color6']=="pink") echo "selected";?>>Розовый</option>
+				<option value="purple" <?if($res['color6']=="purple") echo "selected";?>>Фиолетовый</option>
+				<option value="blue" <?if($res['color6']=="blue") echo "selected";?>>Синий</option>
+				<option value="blue-w" <?if($res['color6']=="blue-w") echo "selected";?>>Голубой</option>
+				<option value="green" <?if($res['color6']=="green") echo "selected";?>>Зеленый</option>
+				<option value="yellow" <?if($res['color6']=="yellow") echo "selected";?>>Желтый</option>
+				<option value="orange" <?if($res['color6']=="orange") echo "selected";?>>Оранжевый</option>
+				<option value="brown" <?if($res['color6']=="brown") echo "selected";?>>Коричневый</option>
+				<option value="gray" <?if($res['color6']=="gray") echo "selected";?>>Серый</option>
+			</select>
+		</label>
+
+Цена (зак.)
+<input class="kk"id="sum_z" name="sum_z"  value="<?echo $res['sum_z'];?>">
+НДС
+<input class="kk"id="nds" name="nds"  value="<?echo $res['nds'];?>">
+Цена (прод.)
+<input class="kk"id="sum_p" name="sum_p"  value="<?echo $res['sum_p'];?>">
+Реком. цена
+<input class="kk"id="rrc"    name="rrc" value="<?echo $res['rrc'];?>">
+
+	<tr><td colspan="12" style="border-bottom:1px solid black;"><h2>Фото</h2></td></tr>
+	<tr>
+	<td colspan="12">
+			<div style="width:100%; position:relelative;" id="areaimg">
+				<div style="float:left; width:200px; height:200px;" onclick="addimg()">
+					<font style="color:#343434;font-size:159px;">+</font>
+				<script>
+					function addimg(){
+							document.getElementById('areaimg').innerHTML+='<div style=" border:1px solid black; float:left; width:200px; height:209px;"><font style="color:#343434;font-size:150px;">?</font><div style="vertical-align:bottom; background-color:#ebebeb;height:37px;"><input style="" id="photo_'+max+'" name="photo_'+max+'" value="123"><label onclick="inp='+max+'; "for="Iphoto_'+max+'"><u>(Выбрать)</u><input id="Iphoto_'+max+'" type="file" style="display:none;" accept=".txt,image/*"></label> - <u><font style="color:#343434;">(URL)</font></u></div></div>';
+							document.getElementById('form').submit.click();
+						inp++; max++;
+					}
+				</script>
+				</div>
+			<?
+			$S=0;
+			for($i=1; $i<=12; $i++)
+			{
+				if(isset($res['photo_'.$i]))
+					if($res['photo_'.$i]!='')
+						if($res['photo_'.$i]!=' ')
+						{
+							$max=$i;
+							echo '<div style="background-image: url('.$res['photo_'.$i].'); background-size: contain; background-position: center; border:1px solid black; background-repeat: no-repeat; float:left; width:200px; height:209px;">';
+							echo '<font style="color:#343434;font-size:150px;">'.$i.'</font>';
+							echo '';
+							echo '<div style="vertical-align:bottom; background-color:#ebebeb;height:37px;">
+							<input style="" id="photo_'.(++$S).'" name="photo_'.($S).'" value="'.$res['photo_'.$i].'">
+							<label onclick="inp='.($S).'; "for="Iphoto_'.($S).'"><u>(Выбрать)</u><input id="Iphoto_'.($S).'" type="file" style="display:none;" accept=".txt,image/*"></label> - <u><font style="color:#343434;">(URL)</font></u>';
+							echo '';
+
+							echo '</div></div>';
+							
+							
+						}
+
+			}
+			echo '<script>max='.++$max.';</script>';
+			?>
+
+Видео
+<input class="kk"id="video" name="video" value="<?echo $res['video'];?>">
+Описание (коментарий Верхний).
+<textarea id="comment" name="comment" style="height:150px; width:100%; text-align:left; padding:4px;"><?echo $res['comment'];?></textarea>
+Полное описание (внизу).
+<textarea id="text" name="text" style="height:150px; width:100%; text-align:left; padding:4px;"><?echo $res['text'];?></textarea>
+SEO (возможные запросы по товару) (через пробел.)
+<textarea id="seo" name="seo" style="height:150px; width:100%; text-align:left; padding:4px;"><?echo $res['seo'];?></textarea>
+
+
+
+
+
+<!-------------------------------------------------->
+<!-------------------------------------------------->
+<!-------------------------------------------------->
