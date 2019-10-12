@@ -46,8 +46,6 @@ if ($_SESSION['admin'] != "1") {
 
 }
 if ($_POST["submit"] != NULL) {
-    var_dump ($_POST); var_dump ($_FILES); echo $_SERVER ["DOCUMENT_ROOT"]; echo "<p>"; echo $_SERVER ["PHP_SELF"]; echo "<p>"; echo $__FILE__; echo "<p>";
-    echo $_FILES['img']['tmp_name']."==>".$_SERVER ["DOCUMENT_ROOT"]."/images/".$_FILES["img"]["name"]; echo "<p>";
     $imagefilename = "images/" . basename($_FILES["img"]["name"]);
     if (move_uploaded_file($_FILES['img']['tmp_name'], $_SERVER ["DOCUMENT_ROOT"]."/".$imagefilename)) {
         echo "Файл корректен и был успешно загружен.\n";
@@ -69,7 +67,7 @@ if ($_POST["submit"] != NULL) {
     }
     $_POST["submit"] = NULL;
 
-    /*echo "<script>window.close();</script>";*/
+    echo "<script>window.close();</script>";
 
 }
 
