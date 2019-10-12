@@ -16,7 +16,7 @@ if ($_SESSION['admin'] != "1") {
     }
 
     echo "
-				<form method='POST'>
+				<form enctype='multipart/form-data' action='red.php' method='POST'>
 				    <input value='" . $_GET["id"] . "' type='hidden' name='id' />
 					<table>
 						<tr>
@@ -27,7 +27,7 @@ if ($_SESSION['admin'] != "1") {
 						</tr>
 						<tr>
 							<td style='height: 20px; vertical-align: top; border:1px solid black; background:#FFFFCB'>Картинка</td>
-							<td><input value='" . $img . "' type='text' name='img' /></td>
+							<td><input value='" . $img . "' type='file' name='img' /></td>
 						</tr>
 						<tr>
 							<td style='height: 20px; vertical-align: top; border:1px solid black; background:#FFFFCB'>Урл</td>
@@ -46,23 +46,30 @@ if ($_SESSION['admin'] != "1") {
 
 }
 if ($_POST["submit"] != NULL) {
-
+    var_dump ($_POST); var_dump ($_FILES); echo $_SERVER ["DOCUMENT_ROOT"]; echo "<p>"; echo $_SERVER ["PHP_SELF"]; echo "<p>"; echo $__FILE__; echo "<p>";
+    echo $_FILES['img']['tmp_name']."==>".$_SERVER ["DOCUMENT_ROOT"]."/images/".$_FILES["img"]["name"]; echo "<p>";
+    $imagefilename = "images/" . basename($_FILES["img"]["name"]);
+    if (move_uploaded_file($_FILES['img']['tmp_name'], $_SERVER ["DOCUMENT_ROOT"]."/".$imagefilename)) {
+        echo "Файл корректен и был успешно загружен.\n";
+    } else {
+        echo "Возможная атака с помощью файловой загрузки!\n";
+    };
     if ($_POST["id"] == 0) {
         $mysqli->query("
 						insert into `banners`
-						(`name`, `img`, `url`) values ( '" . $_POST["name"] . "', '" . $_POST["img"] . "' , '" . $_POST["url"] . "')");
+						(`name`, `img`, `url`) values ( '" . $_POST["name"] . "', '" . $imagefilename . "' , '" . $_POST["url"] . "')");
     } else {
         $mysqli->query("
 						UPDATE `banners`
 						SET `name` = '" . $_POST["name"] . "',
-							`img` = '" . $_POST["img"] . "',
+							`img` = '" . $imagefilename . "',
 							`url` = '" . $_POST["url"] . "'
 						WHERE `id`=" . $_POST["id"] . ";
 						");
     }
     $_POST["submit"] = NULL;
 
-    echo "<script>window.close();</script>";
+    /*echo "<script>window.close();</script>";*/
 
 }
 
