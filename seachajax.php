@@ -102,7 +102,7 @@ $end.='				<li><a data-toggle="modal" onclick="'.$x.'" data-target="#productModa
 $x="shopadd('".$art."');";
 
 $x="laik('".$id."');";
-$end.='				<li><a title="Нравиться" onclick="'.$x.'"><span class="ti-heart"></span></a></li>';
+$end.='				<li><a title="Нравится" onclick="'.$x.'"><span class="ti-heart"></span></a></li>';
 if($video==1)$end.='				<li><a href="'.$url.'"><span class="ti-video-camera"></span></a></li>';
 $end.='			</ul>';
 $end.='			<ul class="product__price">';

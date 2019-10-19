@@ -385,7 +385,7 @@ function shopadd(art){
                         $x="shopadd('".$rest['art']."');";
 
                         $x="laik('".$rest['id']."');";
-						echo '                        <li><a title="Нравиться" onclick="'.$x.'"><span class="ti-heart"></span></a></li>';
+						echo '                        <li><a title="Нравится" onclick="'.$x.'"><span class="ti-heart"></span></a></li>';
 
 						if($rest['video']!="" && $rest['video']!=" ")echo '				<li><a href="'.$rest['url'].'"><span class="ti-video-camera"></span></a></li>';
                         echo '                </ul>';
